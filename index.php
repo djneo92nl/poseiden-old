@@ -11,7 +11,7 @@ include_once(ROOTPATH . '/lib/router.php');
 
 //Require Kint
 if (DEVOLOPMENT) {
-	require ROOTPATH . '/kint/Kint.class.php';
+	require ROOTPATH . '/vendor/raveren/kint/Kint.class.php';
 }
 
 $jsonOutput = new jsonReturnLib();
