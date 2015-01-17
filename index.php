@@ -1,20 +1,21 @@
 <?php
-/**
- * Created by PhpStorm.
- * User: Remko
- * Date: 8-12-2014
- * Time: 21:13
- */
+
 //Define Main Variables
 define('ROOTPATH', __DIR__);
+define('DEVELOPMENT', TRUE);
+
 //Include main
-include_once (ROOTPATH.'/lib/router.php');
-require ROOTPATH.'/kint/Kint.class.php';
+include_once(ROOTPATH . '/lib/main.php');
+//Include the router
+include_once(ROOTPATH . '/lib/router.php');
+
+//Require Kint
+if (DEVOLOPMENT) {
+	require ROOTPATH . '/kint/Kint.class.php';
+}
 
 $jsonOutput = new jsonReturnLib();
-
 $this['Paths'] = router();
 
-kint::dump($this);
-
 $activeController = new $this['Paths']['Controller']();
+$activeAction = $activeController->$this['Paths']['Action']();
