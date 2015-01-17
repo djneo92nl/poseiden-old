@@ -1,12 +1,10 @@
 <?php
 
-
-class homeController {
-
+class homeController extends mainController {
 	function index(){
-		echo 'test';
 
-		kint::dump($this);
+		$nianda = array_fill(1,40,1);
+		$this->json->output($nianda);
+
 	}
-
 }

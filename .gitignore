@@ -48,3 +48,4 @@ debug.txt
 error.txt
 
 /vendor/*
+lib/config.local.php

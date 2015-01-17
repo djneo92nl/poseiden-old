@@ -10,11 +10,10 @@ include_once(ROOTPATH . '/lib/main.php');
 include_once(ROOTPATH . '/lib/router.php');
 
 //Require Kint
-if (DEVOLOPMENT) {
+if (DEVELOPMENT) {
 	require ROOTPATH . '/vendor/raveren/kint/Kint.class.php';
 }
 
-$jsonOutput = new jsonReturnLib();
 $this['Paths'] = router();
 
 $activeController = new $this['Paths']['Controller']();

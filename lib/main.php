@@ -10,9 +10,9 @@
  */
 function debugMessage ($source,$MessageSucces, $MessageFail = null, $state = TRUE) {
 	if (!$state){
-		appendLineToFile( date("H:i:s Y-m-d") . '   '.$source.'   Critical    : '.$MessageFail,'error');
+		appendLineToFile( date("H:i:s d-m-Y") . '   '.$source.'   Critical    : '.$MessageFail,'error');
 	} elseif ($state) {
-		appendLineToFile( date("H:i:s Y-m-d") . '   '.$source.'   Info        : '.$MessageSucces,'debug');
+		appendLineToFile( date("H:i:s d-m-Y") . '   '.$source.'   Info        : '.$MessageSucces,'debug');
 	}
 }
 
