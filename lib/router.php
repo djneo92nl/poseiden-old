@@ -27,8 +27,8 @@ function __autoload ($className) {
 
 	}
 	if (strpos($className, 'Model') !== false) {
-		if (file_exists(ROOTPATH . '/Model' . $className . '.php')) {
-			include ROOTPATH . '/Model' . $className . '.php';
+		if (file_exists(ROOTPATH . '/Model/' . $className . '.php')) {
+			include ROOTPATH . '/Model/' . $className . '.php';
 			$loaded = true;
 		}
 
