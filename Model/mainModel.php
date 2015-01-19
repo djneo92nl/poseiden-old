@@ -21,8 +21,10 @@ class mainModel {
 	}
 
 	public function setConnection () {
-		if (!in_array('config.local.php',get_included_files())) {
-			debugMessage('Model ',null,'No Config setting',false);
+
+		if (!isset($settings['database'])) {
+			debugMessage('Model ', null, 'No Config setting', false);
+
 		}
 	}
 

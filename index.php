@@ -8,6 +8,8 @@ define('DEVELOPMENT', TRUE);
 include_once(ROOTPATH . '/lib/main.php');
 //Include the router
 include_once(ROOTPATH . '/lib/router.php');
+//Include settings
+include_once(ROOTPATH . '/lib/config.local.php');
 
 //Require Kint
 if (DEVELOPMENT) {
