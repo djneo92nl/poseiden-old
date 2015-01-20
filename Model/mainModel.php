@@ -20,9 +20,15 @@ class mainModel {
 		$this->database = $database;
 	}
 
+	public function __construct() {
+		//Include settings
+		include_once(ROOTPATH . '/lib/config.local.php');
+		$this->settings = $settings;
+	}
+
 	public function setConnection () {
 
-		if (!isset($settings['database'])) {
+		if (!isset($this->settings['database'])) {
 			debugMessage('Model ', null, 'No Config setting', false);
 
 		}
