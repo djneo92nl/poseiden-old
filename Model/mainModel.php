@@ -6,6 +6,8 @@ class mainModel {
 	 */
 	private $database;
 
+	private $dboHandler;
+
 	/**
 	 * @return mixed
 	 */
@@ -32,6 +34,14 @@ class mainModel {
 			debugMessage('Model ', null, 'No Config setting', false);
 
 		}
+		$this->dboHandler = new PDO('mysql:host=localhost;dbname=testdb;charset=utf8', $this->settings['database']['username'], 'password');
+		$this->dboHandler->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+		$this->dboHandler->setAttribute(PDO::ATTR_EMULATE_PREPARES, false);
+	}
+
+	public function getData() {
+		$stmt = $this->dboHandler->query("SELECT * FROM" . $this->database);
+		return $stmt->fetchAll(PDO::FETCH_ASSOC);
 	}
 
 
