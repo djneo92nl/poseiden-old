@@ -1,5 +1,6 @@
 {
   "require": {
-    "raveren/kint": "0.9"
+    "raveren/kint": "0.9",
+    "kevinlebrun/colors.php": "0.*"
   }
 }
