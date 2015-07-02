@@ -1,6 +1,6 @@
 <?php
 
-namespace Poseiden;
+namespace djneo\poseiden;
 
 class mainModel {
 	/**

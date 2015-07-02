@@ -10,11 +10,8 @@ include_once(ROOTPATH . '/lib/main.php');
 //Include the router
 include_once(ROOTPATH . '/lib/router.php');
 $test = 0;
+require_once ROOTPATH . '/vender/autoload.php';
 
-//Require Kint
-if (DEVELOPMENT) {
-	require ROOTPATH . '/vendor/raveren/kint/Kint.class.php';
-}
 $this['Paths'] = router();
 
 $activeController = new $this['Paths']['Controller']();
