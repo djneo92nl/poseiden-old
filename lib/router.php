@@ -7,26 +7,26 @@
 function __autoload ($className) {
 	//TODO: Rewrite this piece of s**t
 	$loaded = false;
-	if (strpos($className, 'Lib') != false) {
+	if (strpos($className, 'Lib') !== 0) {
 		if (file_exists(ROOTPATH . '/lib/' . $className . '.php')) {
 			include ROOTPATH . '/lib/' . $className . '.php';
 			$loaded = true;
 		}
 	}
-	if (strpos($className, 'Controller') != false) {
+	if (strpos($className, 'Controller') !== 0) {
 		if (file_exists(ROOTPATH . '/Controller/' . $className . '.php')) {
 			include ROOTPATH . '/Controller/' . $className . '.php';
 			$loaded = true;
 		}
 	}
-	if (strpos($className, 'View') !== false) {
+	if (strpos($className, 'View') !== 0) {
 		if (file_exists(ROOTPATH . '/View/' . $className . '.php')) {
 			include ROOTPATH . '/View/' . $className . '.php';
 			$loaded = true;
 		}
 
 	}
-	if (strpos($className, 'Model') !== false) {
+	if (strpos($className, 'Model') !== 0) {
 		if (file_exists(ROOTPATH . '/Model/' . $className . '.php')) {
 			include ROOTPATH . '/Model/' . $className . '.php';
 			$loaded = true;
