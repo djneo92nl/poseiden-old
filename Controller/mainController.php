@@ -1,5 +1,7 @@
 <?php
 
+namespace djneo\poseiden;
+
 class mainController {
 
 	function __construct () {

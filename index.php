@@ -6,11 +6,10 @@ define('DEVELOPMENT', TRUE);
 
 
 //Include main
-include_once(ROOTPATH . '/lib/main.php');
+include_once (ROOTPATH . '/lib/main.php');
 //Include the router
-include_once(ROOTPATH . '/lib/router.php');
-$test = 0;
-require_once ROOTPATH . '/vender/autoload.php';
+include_once (ROOTPATH . '/lib/router.php');
+require_once (ROOTPATH . '/vender/autoload.php');
 
 $this['Paths'] = router();
 
