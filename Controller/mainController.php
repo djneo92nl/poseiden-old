@@ -4,7 +4,7 @@ namespace djneo\poseiden;
 
 class mainController {
 
-	function __construct () {
+	function __construct() {
 		$this->json = new jsonReturnLib();
 
 		if (isset($this->usedModels)) {

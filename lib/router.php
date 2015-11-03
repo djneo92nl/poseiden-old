@@ -4,7 +4,7 @@
  *
  * @param $className
  */
-function __autoload ($className) {
+function __autoload($className) {
 	//TODO: Rewrite this piece of s**t
 	$loaded = false;
 	if (strpos($className, 'Lib') !== 0) {
@@ -37,7 +37,7 @@ function __autoload ($className) {
 
 }
 
-function router () {
+function router() {
 	//Starting Controller
 	$startingCon = 'homeController';
 	//Starting action

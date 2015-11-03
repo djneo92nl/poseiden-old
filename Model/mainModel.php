@@ -11,19 +11,19 @@ class mainModel {
 	/**
 	 * @return mixed
 	 */
-	public function getDatabase () {
+	public function getDatabase() {
 		return $this->database;
 	}
 
 	/**
 	 * @param mixed $database
 	 */
-	public function setDatabase ($database) {
+	public function setDatabase($database) {
 		$this->database = $database;
 	}
 
 
-	public function insert () {
+	public function insert() {
 
 	}
 	
