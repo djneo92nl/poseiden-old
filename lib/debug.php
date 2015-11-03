@@ -31,7 +31,7 @@ class debug {
 
 
 	/**
-	 * @param        $line
+	 * @param        string $line
 	 * @param string $file filename to append to
 	 */
 	public static function appendLineToFile($line, $file) {
