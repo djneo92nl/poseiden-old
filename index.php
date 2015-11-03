@@ -1,4 +1,5 @@
 <?php
+use djneo\poseiden\main;
 
 //Define Main Variables
 define('ROOTPATH', __DIR__);
@@ -9,9 +10,6 @@ define('DEVELOPMENT', TRUE);
 include_once (ROOTPATH . '/lib/main.php');
 //Include the router
 include_once (ROOTPATH . '/lib/router.php');
-require_once (ROOTPATH . '/vender/autoload.php');
+require_once (ROOTPATH . '/vendor/autoload.php');
 
-$this['Paths'] = router();
-
-$activeController = new $this['Paths']['Controller']();
-$activeAction = $activeController->$this['Paths']['Action']();
+$app = new main;
