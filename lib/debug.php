@@ -21,7 +21,7 @@ class debug {
 	 * @param string $MessageFail
 	 * @param bool $state
 	 */
-	static function debugMessage ($source, $MessageSucces, $MessageFail = null, $state = TRUE) {
+	static function debugMessage($source, $MessageSucces, $MessageFail = null, $state = TRUE) {
 		if (!$state) {
 			debug::appendLineToFile(date("H:i:s d-m-Y") . '   ' . $source . '   Critical    : ' . $MessageFail, 'error');
 		} elseif ($state) {
@@ -34,7 +34,7 @@ class debug {
 	 * @param        $line
 	 * @param string $file filename to append to
 	 */
-	public static function appendLineToFile ($line, $file) {
+	public static function appendLineToFile($line, $file) {
 		$file = 'debug'; //Overide in debug state
 		file_put_contents(ROOTPATH . '/' . $file . '.txt', $line . "\r\n", FILE_APPEND);
 	}

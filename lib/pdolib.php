@@ -11,13 +11,13 @@ class pdoLib extends main {
 
 	private $dboHandler;
 
-	public function __construct () {
+	public function __construct() {
 		//Include settings
 		include_once(ROOTPATH . '/lib/config.local.php');
 		$this->settings = $settings;
 	}
 
-	public function setConnection () {
+	public function setConnection() {
 		if (!isset($this->settings['database'])) {
 			debugMessage('Model ', NULL, 'No Config settings', FALSE);
 		}
@@ -31,7 +31,7 @@ class pdoLib extends main {
 		}
 	}
 
-	public function getData () {
+	public function getData() {
 		$stmt = $this->dboHandler->query("SELECT * FROM" . $this->database);
 
 		return $stmt->fetchAll(PDO::FETCH_ASSOC);
