@@ -12,9 +12,6 @@ class pdoLib extends main {
 	private $dboHandler;
 
 	public function __construct() {
-		//Include settings
-		include_once(ROOTPATH . '/lib/config.local.php');
-		$this->settings = $settings;
 	}
 
 	public function setConnection() {

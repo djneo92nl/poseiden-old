@@ -1,10 +1,10 @@
 <?php
 
-namespace djneo\poseiden;
+namespace djneo\poseiden\lib;
 
 class mainController {
 
-	function __construct() {
+	public function __construct() {
 		$this->json = new jsonReturnLib();
 
 		if (isset($this->usedModels)) {

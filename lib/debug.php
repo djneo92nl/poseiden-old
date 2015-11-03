@@ -21,7 +21,7 @@ class debug {
 	 * @param string $MessageFail
 	 * @param bool $state
 	 */
-	static function debugMessage($source, $MessageSucces, $MessageFail = null, $state = TRUE) {
+	public static function debugMessage($source, $MessageSucces, $MessageFail = null, $state = TRUE) {
 		if (!$state) {
 			debug::appendLineToFile(date("H:i:s d-m-Y") . '   ' . $source . '   Critical    : ' . $MessageFail, 'error');
 		} elseif ($state) {
