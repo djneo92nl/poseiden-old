@@ -4,12 +4,21 @@ namespace djneo\poseiden;
 
 use Colors\Color;
 
+/**
+ * Class main
+ * @package djneo\poseiden
+ */
 class main {
 
-	//Settings storage var
+	/**
+	 * @var array
+	 */
 	public $settings = array();
 
 
+	/**
+	 * main constructor.
+	 */
 	public function __construct() {
 		$this->settings = \parse_ini_file(ROOTPATH . '/lib/config.ini');
 

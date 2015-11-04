@@ -1,11 +1,11 @@
 <?php
+namespace djneo\poseiden;
 
 /** Poseiden Core dbo engine
  *
  * @author remco janse remko@djneo.nl
  * @version 0.1.$Id$
  */
-namespace djneo\poseiden;
 
 class pdoLib extends main {
 

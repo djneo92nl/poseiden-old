@@ -1,6 +1,5 @@
 <?php
-use djneo\poseiden\main;
-
+namespace djneo\poseiden;
 //Define Main Variables
 define('ROOTPATH', __DIR__);
 define('DEVELOPMENT', TRUE);
@@ -12,4 +11,4 @@ include_once (ROOTPATH . '/lib/main.php');
 include_once (ROOTPATH . '/lib/router.php');
 require_once (ROOTPATH . '/vendor/autoload.php');
 
-$app = new main;
+$app = new main();
