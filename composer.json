@@ -2,7 +2,6 @@
   "require": {
     "raveren/kint": "0.9",
     "kevinlebrun/colors.php": "0.*",
-    "whatsapp/chat-api": "^2.5",
     "lightsaml/lightsaml": "^1.0"
   }
 }
