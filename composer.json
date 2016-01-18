@@ -1,14 +1,14 @@
 {
-  "name": "Hexlio/Poseiden",
+  "name": "hexlio/poseiden",
   "type": "project",
   "description": "Modern Home automation",
   "authors": [
-         {
-             "name": "Remko Janse",
-             "email": "remko@djneo.nl",
-             "homepage": "http://djneo.nl",
-             "role": "Developer"
-         }
+     {
+         "name": "Remko Janse",
+         "email": "remko@djneo.nl",
+         "homepage": "http://djneo.nl",
+         "role": "Developer"
+     }
   ],
   "require": {
     "kevinlebrun/colors.php": "0.*",
