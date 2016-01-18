@@ -4,7 +4,8 @@
   "description": "Modern Home automation",
   "require": {
     "kevinlebrun/colors.php": "0.*",
-    "lightsaml/lightsaml": "^1.0"
+    "lightsaml/lightsaml": "^1.0",
+    "muesli/huephp": "~1.0"
   },
   "require-dev":{
     "raveren/kint": "0.9"
