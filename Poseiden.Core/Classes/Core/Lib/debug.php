@@ -1,12 +1,5 @@
 <?php
-/**
- * Poseiden.
- * @author: remkojanse
- * @date  : 25 -  09 - 2015
- *
- */
-
-namespace djneo\poseiden;
+namespace Poseiden\Core\lib;
 
 
 /**

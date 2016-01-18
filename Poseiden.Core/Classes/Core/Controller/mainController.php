@@ -1,6 +1,5 @@
 <?php
-
-namespace djneo\poseiden\lib;
+namespace Poseiden\Core\Controller;
 
 class mainController {
 

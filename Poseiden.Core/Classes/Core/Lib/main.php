@@ -1,6 +1,5 @@
 <?php
-
-namespace djneo\poseiden;
+namespace Poseiden\Core\lib;
 
 use Colors\Color;
 

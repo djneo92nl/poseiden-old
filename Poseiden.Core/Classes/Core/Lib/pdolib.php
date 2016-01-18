@@ -1,5 +1,5 @@
 <?php
-namespace djneo\poseiden;
+namespace Poseiden\Core\lib;
 
 /** Poseiden Core dbo engine
  *

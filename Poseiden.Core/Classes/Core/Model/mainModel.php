@@ -1,6 +1,5 @@
 <?php
-
-namespace djneo\poseiden;
+namespace Poseiden\Core\Model;
 
 class mainModel {
 	/**
@@ -26,5 +25,5 @@ class mainModel {
 	public function insert() {
 
 	}
-	
+
 }
