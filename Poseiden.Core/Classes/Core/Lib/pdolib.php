@@ -16,7 +16,7 @@ class pdoLib extends main {
 
 	public function setConnection() {
 		if (!isset($this->settings['database'])) {
-			debug::Message('Model ', NULL, 'No Config settings', FALSE);
+			debug::debugMessage('Model ', NULL, 'No Config settings', FALSE);
 		}
 
 		try {
