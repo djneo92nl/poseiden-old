@@ -1,7 +1,15 @@
 {
-  "name": "Poseiden",
+  "name": "Hexlio/Poseiden",
   "type": "project",
   "description": "Modern Home automation",
+  "authors": [
+         {
+             "name": "Remko Janse",
+             "email": "remko@djneo.nl",
+             "homepage": "http://djneo.nl",
+             "role": "Developer"
+         }
+  ],
   "require": {
     "kevinlebrun/colors.php": "0.*",
     "lightsaml/lightsaml": "^1.0",
