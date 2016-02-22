@@ -1,0 +1,6 @@
+Poseiden:
+  Database:
+    Host: 'Localhost'
+    Username: 'root'
+    password: 'root'
+    database: 'poseiden'
