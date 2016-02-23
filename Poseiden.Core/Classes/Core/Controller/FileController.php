@@ -7,14 +7,14 @@ namespace Poseiden\Core\Controller;
 
 class FileController {
 
-    private $folderName;
+	private $folderName;
 
-    /*
+	/*
     * Returns an array with file information
     * @param bool $fast, if set to false returns a detailed list of files
     * @Returns Array
     */
-    public function listFiles($fast = TRUE) {
+	public function listFiles($fast = TRUE) {
 
-    }
+	}
 }

@@ -13,6 +13,7 @@ class debug {
 	 * @param string $MessageSucces
 	 * @param string $MessageFail
 	 * @param bool $state
+	 * @param string $source
 	 */
 	public static function debugMessage($source, $MessageSucces, $MessageFail = null, $state = TRUE) {
 		if (!$state) {
