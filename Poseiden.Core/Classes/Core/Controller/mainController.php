@@ -9,7 +9,7 @@ class mainController {
 		if (isset($this->usedModels)) {
 			// load models
 			foreach ($this->usedModels as $model):
-				$modelasmodel = $model . 'Model';
+				$modelasmodel = $model.'Model';
 				$this->$model = new $modelasmodel;
 			endforeach;
 		}

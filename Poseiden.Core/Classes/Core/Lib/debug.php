@@ -17,9 +17,9 @@ class debug {
 	 */
 	public static function debugMessage($source, $MessageSucces, $MessageFail = null, $state = TRUE) {
 		if (!$state) {
-			debug::appendLineToFile(date("H:i:s d-m-Y") . '   ' . $source . '   Critical    : ' . $MessageFail, 'error');
+			debug::appendLineToFile(date("H:i:s d-m-Y").'   '.$source.'   Critical    : '.$MessageFail, 'error');
 		} elseif ($state) {
-			debug::appendLineToFile(date("H:i:s d-m-Y") . '   ' . $source . '   Info        : ' . $MessageSucces, 'debug');
+			debug::appendLineToFile(date("H:i:s d-m-Y").'   '.$source.'   Info        : '.$MessageSucces, 'debug');
 		}
 	}
 
@@ -30,6 +30,6 @@ class debug {
 	 */
 	public static function appendLineToFile($line, $file) {
 		$file = 'debug'; //Overide in debug state
-		file_put_contents(ROOTPATH . '/' . $file . '.txt', $line . "\r\n", FILE_APPEND);
+		file_put_contents(ROOTPATH.'/'.$file.'.txt', $line."\r\n", FILE_APPEND);
 	}
 }

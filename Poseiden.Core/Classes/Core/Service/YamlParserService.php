@@ -1,11 +1,11 @@
 <?php
 namespace Poseiden\Core\Service;
 
-class YamlParseService{
-	public function parseYaml () {
+class YamlParseService {
+	public function parseYaml() {
 
 	}
-	public function writeYaml () {
+	public function writeYaml() {
 
 	}
 }
