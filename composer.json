@@ -13,7 +13,8 @@
   "require": {
     "kevinlebrun/colors.php": "0.*",
     "lightsaml/lightsaml": "^1.0",
-    "muesli/huephp": "~1.0"
+    "muesli/huephp": "~1.0",
+    "doctrine/orm": "^2.5"
   },
   "require-dev":{
     "raveren/kint": "0.9"
