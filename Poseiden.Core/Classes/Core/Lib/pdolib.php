@@ -20,7 +20,7 @@ class pdoLib extends main {
 		}
 
 		try {
-			$this->dboHandler = new PDO('mysql:host=' . $this->settings['database']['host'] . ';dbname=' . $this->settings['database'] . ';' . 'charset=utf8', $this->settings['database']['username'], $this->settings['database']['password']);
+			$this->dboHandler = new PDO('mysql:host='.$this->settings['database']['host'].';dbname='.$this->settings['database'].';'.'charset=utf8', $this->settings['database']['username'], $this->settings['database']['password']);
 			$this->dboHandler->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 			$this->dboHandler->setAttribute(PDO::ATTR_EMULATE_PREPARES, FALSE);
 		} catch (\PDOException $e) {
@@ -29,7 +29,7 @@ class pdoLib extends main {
 	}
 
 	public function getData() {
-		$stmt = $this->dboHandler->query("SELECT * FROM" . $this->database);
+		$stmt = $this->dboHandler->query("SELECT * FROM".$this->database);
 
 		return $stmt->fetchAll(PDO::FETCH_ASSOC);
 	}

@@ -2,13 +2,13 @@
 
 //Bootstrap
 define('ROOTPATH', __DIR__);
-require_once (ROOTPATH . '/vendor/autoload.php');
+require_once (ROOTPATH.'/vendor/autoload.php');
 use Colors\Color;
 $c = new Color();
 
-$port = rand('2010','2455');
+$port = rand('2010', '2455');
 
-	if(!($sock = socket_create(AF_INET, SOCK_STREAM, 0)))
+	if (!($sock = socket_create(AF_INET, SOCK_STREAM, 0)))
 	{
 		$errorcode = socket_last_error();
 		$errormsg = socket_strerror($errorcode);
@@ -17,7 +17,7 @@ $port = rand('2010','2455');
 	}
 
 	// Bind the source address
-	if( !socket_bind($sock, "127.0.0.1" , $port) )
+	if (!socket_bind($sock, "127.0.0.1", $port))
 	{
 		$errorcode = socket_last_error();
 		$errormsg = socket_strerror($errorcode);
@@ -27,7 +27,7 @@ $port = rand('2010','2455');
 
 	echo $c('socket created and binded to port '.$port." \n")->green();
 
-	if(!socket_listen ($sock , 10))
+	if (!socket_listen($sock, 10))
 	{
 		$errorcode = socket_last_error();
 		$errormsg = socket_strerror($errorcode);
@@ -41,10 +41,10 @@ $port = rand('2010','2455');
 
 
 	//Accept incoming connection - This is a blocking call
-	$client =  socket_accept($sock);
+	$client = socket_accept($sock);
 
 	//display information about the client who is connected
-	if(socket_getpeername($client , $address , $port))
+	if (socket_getpeername($client, $address, $port))
 	{
 		echo "Client $address : $port is now connected to us. \n";
 	}
@@ -56,13 +56,13 @@ $port = rand('2010','2455');
 		//read data from the incoming socket
 		$input = socket_read($client, 1024000);
 
-		$response = "OK .. $input" ." \n";
+		$response = "OK .. $input"." \n";
 if (trim($input) == 'doei') {
 	break;
 }
 		if (trim($input) == 'time') {
 			$date = date('H-m');
-			socket_write($client,$c($date)->green());
+			socket_write($client, $c($date)->green());
 		}
 		// Display output  back to client
 		echo $c($response)->green();
