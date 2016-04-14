@@ -1,6 +1,4 @@
 <?php
-namespace Poseiden\Core\lib;
-
 /**
  * Class httpRequest
  * @package djneo\poseiden
@@ -45,9 +43,6 @@ class httpRequest {
 	 * @return mixed
 	 */
 	public function getResult () {
-		if (is_null($this->result)) {
-
-		}
 		return $this->result;
 	}
 

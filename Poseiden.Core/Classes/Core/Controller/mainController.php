@@ -2,9 +2,10 @@
 namespace Poseiden\Core\Controller;
 
 class mainController {
+	private $usedModels;
+
 
 	public function __construct() {
-		$this->json = new jsonReturnLib();
 
 		if (isset($this->usedModels)) {
 			// load models

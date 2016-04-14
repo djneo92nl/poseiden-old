@@ -14,7 +14,10 @@
     "kevinlebrun/colors.php": "0.*",
     "lightsaml/lightsaml": "^1.0",
     "muesli/huephp": "~1.0",
-    "doctrine/orm": "^2.5"
+    "doctrine/orm": "^2.5",
+    "aura/signal": "^1.0",
+    "predis/predis": "^1.0",
+    "bramus/router": "^1.0"
   },
   "require-dev":{
     "raveren/kint": "0.9"

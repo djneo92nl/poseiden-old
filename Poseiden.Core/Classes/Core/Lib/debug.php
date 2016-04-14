@@ -26,10 +26,9 @@ class debug {
 
 	/**
 	 * @param        string $line
-	 * @param string $file filename to append to
 	 */
-	public static function appendLineToFile($line, $file) {
+	public static function appendLineToFile($line) {
 		$file = 'debug'; //Overide in debug state
-		file_put_contents(ROOTPATH.'/'.$file.'.txt', $line."\r\n", FILE_APPEND);
+		file_put_contents($file.'.txt', $line."\r\n", FILE_APPEND);
 	}
 }

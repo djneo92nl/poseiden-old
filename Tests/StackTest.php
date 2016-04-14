@@ -1,4 +1,6 @@
 <?php
+namespace Poseiden\Test;
+
 class StackTest extends PHPUnit_Framework_TestCase
 {
 	public function testPushAndPop()

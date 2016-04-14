@@ -1,13 +1,10 @@
 <?php
 namespace Poseiden\Core;
 
-use Poseiden\Core\Lib;
+use Poseiden\Core;
 
-//Define Main Variables
-define('ROOTPATH', __DIR__);
-define('CONFIGFOLDER', ROOTPATH.'/config/');
-define('DEVELOPMENT', TRUE);
+//Load Autoloader
+require_once ('vendor/autoload.php');
 
-require_once (ROOTPATH.'/vendor/autoload.php');
-
+//Load The bootstraper
 $app = new Lib\main();
