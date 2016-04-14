@@ -1,5 +1,6 @@
 <?php
 namespace Poseiden\Core;
+
 use Poseiden\Core\Lib;
 
 //Define Main Variables
