@@ -4,8 +4,8 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "7511fe2c06443603e26d98bd4ba1caae",
-    "content-hash": "eeae6c319e827d10db666f0812611236",
+    "hash": "80b9ac07abf47694ef1481a41035ffb6",
+    "content-hash": "3526df1a1219d8c3d87797b397d78de9",
     "packages": [
         {
             "name": "aura/installer-default",
@@ -167,6 +167,50 @@
                 "routing"
             ],
             "time": "2015-02-04 12:43:17"
+        },
+        {
+            "name": "cmfcmf/openweathermap-php-api",
+            "version": "v2.1.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/cmfcmf/OpenWeatherMap-PHP-Api.git",
+                "reference": "f4fc509afef524b193c4889e8a5743b8041809a0"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/cmfcmf/OpenWeatherMap-PHP-Api/zipball/f4fc509afef524b193c4889e8a5743b8041809a0",
+                "reference": "f4fc509afef524b193c4889e8a5743b8041809a0",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=5.3.0"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "Cmfcmf\\": "Cmfcmf"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Christian Flach (cmfcmf)",
+                    "email": "cmfcmf.flach@gmail.com",
+                    "homepage": "http://cmfcmf.github.io",
+                    "role": "Developer"
+                }
+            ],
+            "description": "A php api to parse weather data from OpenWeatherMap.org. This api tries to normalise and abstract the data and remove inconsistencies.",
+            "homepage": "https://github.com/cmfcmf/OpenWeatherMap-PHP-Api",
+            "keywords": [
+                "OpenWeatherMap",
+                "weather",
+                "weather api"
+            ],
+            "time": "2016-04-12 17:36:06"
         },
         {
             "name": "doctrine/annotations",

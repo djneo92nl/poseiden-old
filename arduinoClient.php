@@ -4,6 +4,9 @@
 define('ROOTPATH', __DIR__);
 require_once (ROOTPATH.'/vendor/autoload.php');
 use Colors\Color;
+use Poseiden\Core\Model;
+
+
 $c = new Color();
 
 $port = rand('2010', '2455');
@@ -17,7 +20,7 @@ $port = rand('2010', '2455');
 	}
 
 	// Bind the source address
-	if (!socket_bind($sock, "127.0.0.1", $port))
+	if (!socket_bind($sock, "0.0.0.0", $port))
 	{
 		$errorcode = socket_last_error();
 		$errormsg = socket_strerror($errorcode);
@@ -48,15 +51,27 @@ $port = rand('2010', '2455');
 	{
 		echo "Client $address : $port is now connected to us. \n";
 	}
+$olddate = null;
+@socket_set_nonblock($client);
 
 	//start loop to listen for incoming connections
 	while (true)
 	{
+		$mem_usage = memory_get_usage(true);
+
+		usleep(900);
+		$date = date('H:i');
+		if ($date != $olddate){
+			socket_write($client, $c($date)->green().'-' .round($mem_usage/1048576,2)."\n");
+$olddate = $date;
+		}
+
+		//	socket_write($client, rand(1,100));
 
 		//read data from the incoming socket
-		$input = socket_read($client, 1024000);
+		$input = socket_read($client, 10);
 
-		$response = "OK .. $input"." \n";
+//		$response = "OK .. $input"." \n";
 if (trim($input) == 'doei') {
 	break;
 }
@@ -64,8 +79,14 @@ if (trim($input) == 'doei') {
 			$date = date('H-m');
 			socket_write($client, $c($date)->green());
 		}
+
+		if (trim($input) == 'weer') {
+			$weer = new Model\weatherModel('Rotterdam');
+			socket_write($client, $weer->temperature(). " \n");
+		}
+
 		// Display output  back to client
-		echo $c($response)->green();
+		//echo $c($response)->green();
 	}
 	socket_close($client);
 	socket_close($sock);
