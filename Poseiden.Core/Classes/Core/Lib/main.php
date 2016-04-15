@@ -20,6 +20,8 @@ class main {
 	 */
 	public function __construct() {
 		//$this->settings = \parse_ini_file(CONFIGFOLDER . 'config.ini');
+		//$this->settings = \parse_ini_file(CONFIGFOLDER . 'config.ini');
+
 		$c = new Color();
 		echo $c('Hello World!')->green();
 
