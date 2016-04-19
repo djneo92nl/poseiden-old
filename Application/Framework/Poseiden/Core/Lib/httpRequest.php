@@ -49,7 +49,7 @@ class httpRequest {
 	/**
 	 * @param mixed $result
 	 */
-	public function setResult ($result) {
+	public function setResult($result) {
 		$this->result = $result;
 	}
 

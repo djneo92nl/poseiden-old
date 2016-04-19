@@ -16,18 +16,18 @@ class weatherModel {
 	/**
 	 * @param $city
 	 */
-	public function __construct($city){
+	public function __construct($city) {
 		$owm = new OpenWeatherMap('3fe75478307d3590ef58fa09f41d2f03');
 		try {
 			$weather = $owm->getWeather($city, $this->units, $this->lang);
-		} catch(\Exception $e) {
-			lib\debug::debugMessage('weather','General exception: ' . $e->getMessage() . ' (Code ' . $e->getCode() . ').');
+		} catch (\Exception $e) {
+			lib\debug::debugMessage('weather', 'General exception: '.$e->getMessage().' (Code '.$e->getCode().').');
 		}
 
 		$this->response = $weather;
 	}
 
-	public function temperature(){
+	public function temperature() {
 		return $this->response->temperature;
 	}
 }

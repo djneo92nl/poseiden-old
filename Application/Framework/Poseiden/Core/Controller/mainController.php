@@ -10,7 +10,7 @@ class mainController extends \Poseiden\Core\lib\Main {
 
 	}
 
-	public function jsonReturn(array $content){
+	public function jsonReturn(array $content) {
 		header('Content-Type: application/json');
 		header('X-Poseiden: 0.0.1');
 		echo json_encode($content);
