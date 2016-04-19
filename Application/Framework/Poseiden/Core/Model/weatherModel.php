@@ -15,8 +15,6 @@ class weatherModel {
 	public $response;
 	/**
 	 * @param $city
-	 *
-	 * @return \Cmfcmf\OpenWeatherMap\CurrentWeather
 	 */
 	public function __construct($city){
 		$owm = new OpenWeatherMap('3fe75478307d3590ef58fa09f41d2f03');

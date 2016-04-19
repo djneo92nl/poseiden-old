@@ -48,4 +48,5 @@ debug.txt
 error.txt
 
 /vendor/*
+/Application/Libraries/*
 lib/config.local.php

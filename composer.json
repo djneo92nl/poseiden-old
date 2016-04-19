@@ -10,6 +10,9 @@
          "role": "Developer"
      }
   ],
+  "config": {
+    "vendor-dir": "Application/Libraries"
+  },
   "require": {
     "kevinlebrun/colors.php": "0.*",
     "lightsaml/lightsaml": "^1.0",
@@ -25,7 +28,7 @@
   },
   "autoload": {
       "psr-4": {
-          "Poseiden\\Core\\": "Poseiden.Core/Classes/Core/"
+          "Poseiden\\Core\\": "Application/Framework/Poseiden/Core/"
       }
     }
 }

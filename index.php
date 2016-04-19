@@ -1,10 +1,8 @@
 <?php
 namespace Poseiden\Core;
 
-use Poseiden\Core;
-
 //Load Autoloader
-require_once ('vendor/autoload.php');
+require_once ('Application/Libraries/autoload.php');
 
 //Load The bootstraper
 $app = new Lib\main();

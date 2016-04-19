@@ -17,9 +17,9 @@ class debug {
 	 */
 	public static function debugMessage($source, $MessageSucces, $MessageFail = null, $state = TRUE) {
 		if (!$state) {
-			debug::appendLineToFile(date("H:i:s d-m-Y").'   '.$source.'   Critical    : '.$MessageFail, 'error');
+			debug::appendLineToFile(date("H:i:s d-m-Y")."  ".$source."\tCritical\t: ".$MessageFail);
 		} elseif ($state) {
-			debug::appendLineToFile(date("H:i:s d-m-Y").'   '.$source.'   Info        : '.$MessageSucces, 'debug');
+			debug::appendLineToFile(date("H:i:s d-m-Y")."  ".$source."\tInfo\t: ".$MessageSucces);
 		}
 	}
 

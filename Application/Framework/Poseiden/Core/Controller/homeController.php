@@ -3,10 +3,9 @@ namespace Poseiden\Core\Controller;
 
 class homeController extends mainController {
 
-	public $usedModels = ['main'];
 
 
-	public function index() {
-		d($this);
+	public function indexAction() {
+		$this->jsonReturn(array('test'));
 	}
 }

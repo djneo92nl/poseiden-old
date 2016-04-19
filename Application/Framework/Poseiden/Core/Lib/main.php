@@ -1,8 +1,7 @@
 <?php
 namespace Poseiden\Core\lib;
 
-use Colors\Color;
-
+use Poseiden\Core\Controller\homeController;
 /**
  * Class main
  * @package djneo\poseiden
@@ -19,9 +18,11 @@ class main {
 	 * main constructor.
 	 */
 	public function __construct() {
-		//$this->settings = \parse_ini_file(CONFIGFOLDER . 'config.ini');
-		$c = new Color();
-		echo $c('Hello World!')->green();
+
+		$this->settings = 'hay';
+		$usedController = new homeController();
+
+		call_user_func_array(array($usedController,'indexAction'),array(''));
 
 	}
 
