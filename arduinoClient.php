@@ -2,7 +2,7 @@
 
 //Bootstrap
 define('ROOTPATH', __DIR__);
-require_once (ROOTPATH.'/vendor/autoload.php');
+require_once ('Application/Libraries/autoload.php');
 use Colors\Color;
 use Poseiden\Core\Model;
 
