@@ -26,7 +26,7 @@ if (!socket_bind($sock, "0.0.0.0", $port)) {
 	die("Could not bind socket : [$errorcode] $errormsg \n");
 }
 
-echo $c('socket created and binded to port ' . $port . " \n")->green();
+echo $c('socket created and binded to port '.$port." \n")->green();
 
 if (!socket_listen($sock, 10)) {
 	$errorcode = socket_last_error();
@@ -59,7 +59,7 @@ while (true) {
 	usleep(900);
 	$date = date('H:i');
 	if ($date != $olddate) {
-		socket_write($client, $c($date)->green() . '-' . round($mem_usage / 1048576, 2) . "\n");
+		socket_write($client, $c($date)->green().'-'.round($mem_usage / 1048576, 2)."\n");
 		$olddate = $date;
 	}
 
@@ -68,7 +68,7 @@ while (true) {
 	//read data from the incoming socket
 	$input = socket_read($client, 1024000);
 
-	$response = "OK .. $input" . " \n";
+	$response = "OK .. $input"." \n";
 	if (trim($input) == 'doei') {
 		break;
 	}
@@ -79,7 +79,7 @@ while (true) {
 
 	if (trim($input) == 'weer') {
 		$weer = new Model\weatherModel('Rotterdam');
-		socket_write($client, $weer->temperature() . " \n");
+		socket_write($client, $weer->temperature()." \n");
 	}
 
 	// Display output  back to client

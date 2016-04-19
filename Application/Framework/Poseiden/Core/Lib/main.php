@@ -22,7 +22,7 @@ class main {
 		$this->settings = 'hay';
 		$usedController = new homeController();
 
-		call_user_func_array(array($usedController,'indexAction'),array(''));
+		call_user_func_array(array($usedController, 'indexAction'), array(''));
 
 	}
 

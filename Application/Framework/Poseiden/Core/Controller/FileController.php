@@ -12,14 +12,14 @@ class FileController {
 	/**
 	 * @return mixed
 	 */
-	public function getFolderName () {
+	public function getFolderName() {
 		return $this->folderName;
 	}
 
 	/**
 	 * @param mixed $folderName
 	 */
-	public function setFolderName ($folderName) {
+	public function setFolderName($folderName) {
 		$this->folderName = $folderName;
 	}
 
