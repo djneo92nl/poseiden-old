@@ -50,3 +50,6 @@ error.txt
 /vendor/*
 /Application/Libraries/*
 lib/config.local.php
+
+/demo
+/demo/*

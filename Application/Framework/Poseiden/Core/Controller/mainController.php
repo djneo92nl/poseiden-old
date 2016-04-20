@@ -2,6 +2,9 @@
 namespace Poseiden\Core\Controller;
 
 
+use Poseiden\Core\lib\jsonReturnLib;
+
+
 class mainController extends \Poseiden\Core\lib\Main {
 	private $usedModels;
 
@@ -11,8 +14,8 @@ class mainController extends \Poseiden\Core\lib\Main {
 	}
 
 	public function jsonReturn(array $content) {
-		header('Content-Type: application/json');
-		header('X-Poseiden: 0.0.1');
-		echo json_encode($content);
+
+		$output = new jsonReturnLib();
+		$output->output($content);
 	}
 }

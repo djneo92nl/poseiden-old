@@ -12,7 +12,7 @@ class weatherModel {
 	// Units (can be 'metric' or 'imperial' [default]):
 	public $units = 'metric';
 
-	public $response;
+	private $response;
 	/**
 	 * @param $city
 	 */
@@ -27,7 +27,31 @@ class weatherModel {
 		$this->response = $weather;
 	}
 
-	public function temperature() {
-		return $this->response->temperature;
+	public function getTemperature() {
+		return $this->response->temperature->getValue();
+	}
+
+	public function getSunrise() {
+		return $this->response->sun->rise;
+	}
+
+	public function getSunset() {
+		return $this->response->sun->set;
+	}
+
+	public function getSunHours() {
+		return \date_diff($this->getSunset(),$this->getSunrise())->h;
+	}
+
+	public function getHumidity() {
+		return (int) $this->response->humidity->getValue();
+	}
+
+	public function getDescription() {
+		return $this->response->weather->description;
+	}
+
+	public function getIcon() {
+		return $this->response->weather->icon;
 	}
 }
