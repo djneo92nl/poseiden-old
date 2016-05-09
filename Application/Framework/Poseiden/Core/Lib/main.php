@@ -2,6 +2,7 @@
 namespace Poseiden\Core\lib;
 
 use Poseiden\Core\Controller\homeController;
+use Poseiden\Core\Bootstrap\Cache;
 use Poseiden\Core\Service;
 
 /**
@@ -20,6 +21,9 @@ class main {
 	 * main constructor.
 	 */
 	public function __construct() {
+		//build cache
+		$nn = new Cache\ConfigurationParser();
+		$nn->create();
 
 		//$this->settings = 'hay';
 		$usedController = new homeController();
