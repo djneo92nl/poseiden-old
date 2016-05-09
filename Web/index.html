@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <link href="Styles/jquery.json-viewer.css" rel="stylesheet">
+    <script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
+    <script src="Javascript/jquery.json-viewer.js"></script>
+
+    <meta charset="UTF-8">
+    <title>Poseiden Server Backend 0.0.1</title>
+    <style>
+        #container{
+            padding-top: 60px;
+        }
+    </style>
+    <script>
+        function fillJson (){
+            var url = $('#url-path').val();
+            jQuery.get(url).done(function(data) {
+                var input = data;
+                var options = {
+                    collapsed: $('#collapsed').is(':checked'),
+                    withQuotes: $('#with-quotes').is(':checked')
+                };
+                $('#json-renderer').jsonViewer(input, options);
+            });
+        }
+
+        $(function() {
+            $('#btn-json-viewer').click(function(event) {
+                event.preventDefault();
+                fillJson()
+
+            });
+
+            // Display JSON sample on load
+           // $('#btn-json-viewer').click();
+        });
+
+    </script>
+</head>
+<body>
+    <nav class="navbar navbar-inverse  navbar-fixed-top">
+        <div class="container-fluid">
+            <!-- Brand and toggle get grouped for better mobile display -->
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand" href="#">Poseiden</a>
+            </div>
+
+            <!-- Collect the nav links, forms, and other content for toggling -->
+            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                <button type="button" class="btn btn-danger navbar-btn">Sign in</button>
+
+                <form class="navbar-form navbar-right" role="search">
+                    <div class="form-group">
+                        <input id="url-path" type="text" class="form-control" placeholder="URL">
+                    </div>
+                    <button id="btn-json-viewer" type="submit" class="btn btn-default">Submit</button>
+                </form>
+
+
+            </div><!-- /.navbar-collapse -->
+        </div><!-- /.container-fluid -->
+    </nav>
+<div id="container">
+    <div class="row-fluid">
+        <div class="col-md-4">
+            <h1>
+                Wow
+            </h1>
+        </div>
+        <div class="col-md-8">
+          <div >
+              <pre id="json-renderer"></pre>
+          </div>
+        </div>
+    </div>
+</div>
+
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
+<script>
+    $('#url-path').val('http://poseiden.dev');
+    fillJson()
+
+</script>
+</body>
+</html>
