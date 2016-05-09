@@ -53,3 +53,5 @@ lib/config.local.php
 
 /demo
 /demo/*
+
+/Cache/*

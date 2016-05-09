@@ -63,7 +63,7 @@ class fileService {
 		$return = array();
 		foreach($scan as $file)
 		{
-			if (!is_dir("$this->folderName/$file"))
+			if (!is_dir($this->folderName.DIRECTORY_SEPARATOR.$file))
 			{
 				$this->files[] = $file;
 			} else {

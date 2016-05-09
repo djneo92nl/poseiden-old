@@ -21,7 +21,8 @@
     "aura/signal": "^1.0",
     "predis/predis": "^1.0",
     "bramus/router": "^1.0",
-    "cmfcmf/openweathermap-php-api": "^2.1"
+    "cmfcmf/openweathermap-php-api": "^2.1",
+    "symfony/yaml": "^3.0"
   },
   "require-dev":{
     "raveren/kint": "0.9"
