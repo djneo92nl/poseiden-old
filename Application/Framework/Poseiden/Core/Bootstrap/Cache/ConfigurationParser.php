@@ -21,11 +21,7 @@ class ConfigurationParser {
 			$fileInfo = pathinfo(CONFIGPATH.DIRECTORY_SEPARATOR.$file);
 			if ($fileInfo['extension'] == 'yaml'){
 				$content = file_get_contents(CONFIGPATH.DIRECTORY_SEPARATOR.$file);
-			}
 
-
-			//Parse Files
-			if ($content != '') {
 				$parser = new Parser();
 				try {
 					$value = $parser->parse($content);

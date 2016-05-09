@@ -63,8 +63,6 @@ while (true) {
 		$olddate = $date;
 	}
 
-	//	socket_write($client, rand(1,100));
-
 	//read data from the incoming socket
 	$input = socket_read($client, 1024000);
 
@@ -79,10 +77,8 @@ while (true) {
 
 	if (trim($input) == 'weer') {
 		$weer = new Model\weatherModel('Rotterdam');
-		socket_write($client, $weer->temperature()." \n");
+		socket_write($client, $weer->getTemperature()." \n");
 	}
 
-	// Display output  back to client
-	//echo $c($response)->green();
 }
 socket_close($client);

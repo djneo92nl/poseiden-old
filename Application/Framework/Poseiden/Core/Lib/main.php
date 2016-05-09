@@ -25,14 +25,8 @@ class main {
 		$nn = new Cache\ConfigurationParser();
 		$nn->create();
 
-		//$this->settings = 'hay';
 		$usedController = new homeController();
-
-		//call_user_func_array(array($usedController, 'weatherAction'), array(''));
-				$files = new Service\fileService($_SERVER['DOCUMENT_ROOT'].'/demo/');
-
-		var_dump($files->getFiles());
-		var_dump($files->getFolders());
+		call_user_func_array(array($usedController, 'weatherAction'), array(''));
 	}
 
 }
