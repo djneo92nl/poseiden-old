@@ -14,6 +14,28 @@
         #container{
             padding-top: 60px;
         }
+		#url-path{
+			border-bottom-right-radius: 0px;
+			border-top-right-radius: 0px;
+			width: 45rem;
+		}
+		#url-path:focus{
+			box-shadow: none;
+			background-color: #fff;
+			color: #000;
+		}
+		#btn-json-viewer{
+			border-bottom-left-radius: 0px;
+			border-top-left-radius: 0px;
+			margin-left: -5px;
+		}
+
+		#btn-json-viewer, #url-path{
+			background-color: #323232;
+
+			color: #e4e4e4;
+			border-color: #515151;
+		}
     </style>
     <script>
         function fillJson (){
@@ -62,8 +84,9 @@
                 <form class="navbar-form navbar-right" role="search">
                     <div class="form-group">
                         <input id="url-path" type="text" class="form-control" placeholder="URL">
+						<button id="btn-json-viewer" type="submit" class="btn btn-default">Submit</button>
                     </div>
-                    <button id="btn-json-viewer" type="submit" class="btn btn-default">Submit</button>
+
                 </form>
 
 
