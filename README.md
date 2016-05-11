@@ -23,3 +23,9 @@ Requires use of a (to build) Frontend, only returns JSON
 Just run Composer install
 
 
+##Tools
+
+###Request viewer
+
+In the web folder there is a simple tool to do api calls and see there results, will feature a login function, and simple information about the application
+

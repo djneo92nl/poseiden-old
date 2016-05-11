@@ -24,6 +24,19 @@ class main {
 		//build cache
 		$nn = new Cache\ConfigurationParser();
 		$nn->create();
+		if (php_sapi_name() == 'cli') {
+			$this->settings['mode'] = 'cli';
+		} else {
+			// Not in cli-mode
+			$request = $_SERVER["HTTP_ACCEPT"];
+			if(strpos($request, 'application/json') != false) {
+				$this->settings['mode'] = 'json';
+			}
+			else{
+				$this->settings['mode'] = 'html';
+				//header('Location: Web/index.html');
+			}
+		}
 
 		$usedController = new homeController();
 		call_user_func_array(array($usedController, 'weatherAction'), array(''));

@@ -16,18 +16,12 @@ class ConfigurationParser {
 	public function create () {
 		//Get files
 		$files = new Service\fileService(CONFIGPATH);
-		$ArrayToWrite = array();
+		$ArrayToWrite = array('creationTime' => date('Y-m-d H:s'));
 		foreach ($files->getFiles() as $file) {
 			$fileInfo = pathinfo(CONFIGPATH.DIRECTORY_SEPARATOR.$file);
 			if ($fileInfo['extension'] == 'yaml'){
 				$content = file_get_contents(CONFIGPATH.DIRECTORY_SEPARATOR.$file);
-
-				$parser = new Parser();
-				try {
-					$value = $parser->parse($content);
-				} catch (ParseException $e) {
-					lib\debug::debugMessage('cache',"","Unable to parse the YAML string: %s". $e->getMessage(), false);
-				}
+				$value= $this->parseYaml($content);
 			}
 
 			$ArrayToWrite = array_replace_recursive($ArrayToWrite,$value);
@@ -35,10 +29,19 @@ class ConfigurationParser {
 
 		}
 
-		//Write Files
 		file_put_contents(CACHEPATH.'Configuration'.DIRECTORY_SEPARATOR.'Parsed.php', '<?php $configuration = ' . var_export($ArrayToWrite, true) . ';');
+	}
 
-
-
+	/**
+	 * @param $yaml
+	 * @return mixed
+	 */
+	public function parseYaml($yaml) {
+		$parser = new Parser();
+		try {
+			return $parser->parse($yaml);
+		} catch (ParseException $e) {
+			lib\debug::debugMessage('cache',"","Unable to parse the YAML string: %s". $e->getMessage(), false);
+		}
 	}
 }
