@@ -26,14 +26,11 @@ class main {
 		if (php_sapi_name() == 'cli') {
 			$this->settings['mode'] = 'cli';
 		} else {
-			// Not in cli-mode
-			$request = $_SERVER["HTTP_ACCEPT"];
-			if (strpos($request, 'application/json') != false) {
+			if(!empty($_SERVER['HTTP_X_REQUESTED_WITH']) && strtolower($_SERVER['HTTP_X_REQUESTED_WITH']) == 'xmlhttprequest') {
 				$this->settings['mode'] = 'json';
-			}
-			else {
+			} else {
 				$this->settings['mode'] = 'html';
-				//header('Location: Web/index.html');
+				header('Location: Web/index.html');
 			}
 		}
 

@@ -16,7 +16,7 @@ class ConfigurationParser {
 	public function create() {
 		//Get files
 		$files = new Service\fileService(CONFIGPATH);
-		$ArrayToWrite = array('creationTime' => date('Y-m-d H:s'));
+		$ArrayToWrite = array('creationTime' => date('Y-m-d H:i:s'));
 		foreach ($files->getFiles() as $file) {
 			$fileInfo = pathinfo(CONFIGPATH.DIRECTORY_SEPARATOR.$file);
 			if ($fileInfo['extension'] == 'yaml') {

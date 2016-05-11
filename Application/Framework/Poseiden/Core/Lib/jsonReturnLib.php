@@ -22,8 +22,6 @@ class jsonReturnLib {
 	}
 
 
-
-
 	public function output($content = null) {
 		header('Content-Type: application/json');
 		header('X-Poseiden: 0.0.1');
