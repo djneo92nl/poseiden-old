@@ -3,7 +3,6 @@ namespace Poseiden\Core\lib;
 
 use Poseiden\Core\Controller\homeController;
 use Poseiden\Core\Bootstrap\Cache;
-use Poseiden\Core\Service;
 
 /**
  * Class main
@@ -29,10 +28,10 @@ class main {
 		} else {
 			// Not in cli-mode
 			$request = $_SERVER["HTTP_ACCEPT"];
-			if(strpos($request, 'application/json') != false) {
+			if (strpos($request, 'application/json') != false) {
 				$this->settings['mode'] = 'json';
 			}
-			else{
+			else {
 				$this->settings['mode'] = 'html';
 				//header('Location: Web/index.html');
 			}
