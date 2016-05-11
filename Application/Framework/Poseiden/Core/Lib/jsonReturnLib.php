@@ -28,7 +28,7 @@ class jsonReturnLib {
 		header('Content-Type: application/json');
 		header('X-Poseiden: 0.0.1');
 
-		if ($content === null){
+		if ($content === null) {
 			$content = $this->buffer;
 		}
 		$output = array();
