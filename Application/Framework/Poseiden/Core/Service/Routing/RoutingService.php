@@ -1,8 +1,6 @@
 <?php
 namespace Poseiden\Core\Service\Routing;
 
-use Poseiden\Core\lib;
-
 class RoutingService {
 
 	private $routerClass;
@@ -14,7 +12,7 @@ class RoutingService {
 	public $requestheaders;
 
 
-	function __construct () {
+	function __construct() {
 		$this->routerClass = new \Bramus\Router\Router();
 
 		$this->requestmethod = $this->routerClass->getRequestMethod();
@@ -23,7 +21,7 @@ class RoutingService {
 			case "POST":
 				break;
 			case "GET":
-				$this->routerClass->get('/(.*)',function($url){
+				$this->routerClass->get('/(.*)', function($url) {
 					$this->parseRoute($url);
 				});
 				break;
@@ -40,7 +38,7 @@ class RoutingService {
 
 
 	/**
-	 * @param $header
+	 * @param string $header
 	 *
 	 * @return bool
 	 */
@@ -53,15 +51,15 @@ class RoutingService {
 
 
 	public function parseRoute($url) {
-		$parsedUrl = explode('/',urldecode($url));
-		if (is_null($parsedUrl[0])){
+		$parsedUrl = explode('/', urldecode($url));
+		if (is_null($parsedUrl[0])) {
 			$this->route['requestedController'] = 'homeController';
 		}
 		else {
 			$this->route['requestedController'] = strtolower($parsedUrl[0]).'Controller';
 		}
 
-		if (!isset($parsedUrl[1])){
+		if (!isset($parsedUrl[1])) {
 			$this->route['requestedAction'] = 'indexAction';
 		}
 		else {
