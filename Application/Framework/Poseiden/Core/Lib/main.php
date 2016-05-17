@@ -29,7 +29,7 @@ class main {
 		if (php_sapi_name() == 'cli') {
 			$this->settings['mode'] = 'cli';
 		} else {
-			if(strtolower($this->settings['route']->getRequestHeader('X-Requested-With')) == 'xmlhttprequest') {
+			if (strtolower($this->settings['route']->getRequestHeader('X-Requested-With')) == 'xmlhttprequest') {
 				$this->settings['mode'] = 'json';
 			} else {
 				$this->settings['mode'] = 'html';
@@ -50,7 +50,7 @@ class main {
 				echo json_encode(['state' => 'error',
 					'error' => '404',
 					'message' => 'Page not found'
-				],JSON_PRETTY_PRINT);
+				], JSON_PRETTY_PRINT);
 				die;
 			}
 
@@ -61,7 +61,7 @@ class main {
 			echo json_encode(['state' => 'error',
 				'error' => '404',
 				'message' => 'Page not found'
-			],JSON_PRETTY_PRINT);
+			], JSON_PRETTY_PRINT);
 			die;
 }
 	}
