@@ -2,6 +2,7 @@
 namespace Poseiden\Core\lib;
 
 use Poseiden\Core\Controller\homeController;
+use Poseiden\Core\Service;
 use Poseiden\Core\Bootstrap\Cache;
 
 /**
@@ -20,13 +21,15 @@ class main {
 	 * main constructor.
 	 */
 	public function __construct() {
+		$this->settings['route'] = new Service\Routing\RoutingService();
 		//build cache
 		$nn = new Cache\ConfigurationParser();
 		$nn->create();
+
 		if (php_sapi_name() == 'cli') {
 			$this->settings['mode'] = 'cli';
 		} else {
-			if(!empty($_SERVER['HTTP_X_REQUESTED_WITH']) && strtolower($_SERVER['HTTP_X_REQUESTED_WITH']) == 'xmlhttprequest') {
+			if(strtolower($this->settings['route']->getRequestHeader('X-Requested-With')) == 'xmlhttprequest') {
 				$this->settings['mode'] = 'json';
 			} else {
 				$this->settings['mode'] = 'html';
@@ -34,8 +37,33 @@ class main {
 			}
 		}
 
-		$usedController = new homeController();
-		call_user_func_array(array($usedController, 'weatherAction'), array(''));
+		$calledController = "Poseiden\Core\Controller\\".$this->settings['route']->route['requestedController'];
+		$calledAction = $this->settings['route']->route['requestedAction'];
+		if (class_exists($calledController)) {
+			$usedController = new $calledController();
+			if (method_exists($usedController, $calledAction)) {
+				call_user_func_array(array($usedController, $calledAction), array(''));
+			} else {
+				header('Content-Type: application/json');
+				header('HTTP/1.0 404 Not Found');
+				header('X-Poseiden: 0.0.1');
+				echo json_encode(['state' => 'error',
+					'error' => '404',
+					'message' => 'Page not found'
+				],JSON_PRETTY_PRINT);
+				die;
+			}
+
+		} else {
+			header('Content-Type: application/json');
+			header('Content-Type: application/json');
+			header('X-Poseiden: 0.0.1');
+			echo json_encode(['state' => 'error',
+				'error' => '404',
+				'message' => 'Page not found'
+			],JSON_PRETTY_PRINT);
+			die;
+}
 	}
 
 }
