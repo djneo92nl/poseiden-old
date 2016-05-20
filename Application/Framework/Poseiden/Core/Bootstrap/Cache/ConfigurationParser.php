@@ -32,6 +32,10 @@ class ConfigurationParser {
 		file_put_contents(CACHEPATH.'Configuration'.DIRECTORY_SEPARATOR.'Parsed.php', '<?php $configuration = '.var_export($ArrayToWrite, true).';');
 	}
 
+	public function read() {
+		include CACHEPATH.'Configuration'.DIRECTORY_SEPARATOR.'Parsed.php';
+	}
+
 	/**
 	 * @param string $yaml
 	 * @return mixed

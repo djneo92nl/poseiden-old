@@ -17,12 +17,12 @@
     "kevinlebrun/colors.php": "0.*",
     "lightsaml/lightsaml": "^1.0",
     "muesli/huephp": "~1.0",
-    "doctrine/orm": "^2.5",
     "aura/signal": "^1.0",
     "predis/predis": "^1.0",
     "bramus/router": "^1.0",
     "cmfcmf/openweathermap-php-api": "^2.1",
-    "symfony/yaml": "^3.0"
+    "symfony/yaml": "^3.0",
+    "j4mie/paris": "^1.5"
   },
   "require-dev":{
     "raveren/kint": "0.9"
