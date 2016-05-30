@@ -12,7 +12,7 @@ class RoutingService {
 	public $requestheaders;
 
 
-	function __construct() {
+	public function __construct() {
 		$this->routerClass = new \Bramus\Router\Router();
 
 		$this->requestmethod = $this->routerClass->getRequestMethod();
