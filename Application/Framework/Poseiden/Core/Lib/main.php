@@ -1,8 +1,9 @@
 <?php
 namespace Poseiden\Core\lib;
 
-use Poseiden\Core\Controller\homeController;
+use Poseiden\Core\Bootstrap\Database\OrmLoader;
 use Poseiden\Core\Service;
+use Poseiden\Core\Model;
 use Poseiden\Core\Bootstrap\Cache;
 
 /**
@@ -14,17 +15,22 @@ class main {
 	/**
 	 * @var array
 	 */
-	public $settings = array();
-
+	protected $settings = array();
 
 	/**
 	 * main constructor.
 	 */
 	public function __construct() {
-		$this->settings['route'] = new Service\Routing\RoutingService();
 		//build cache
-		$nn = new Cache\ConfigurationParser();
+		$nn = new Cache\configurationParser();
 		$nn->create();
+
+		$this->settings = $nn->read();
+		$this->settings['route'] = new Service\Routing\RoutingService();
+
+		DILib::set('set',$nn->read() );
+		//Load Database
+		DILib::set('orm',new ormLoader());
 
 		if (php_sapi_name() == 'cli') {
 			$this->settings['mode'] = 'cli';
@@ -63,7 +69,6 @@ class main {
 				'message' => 'Page not found'
 			], JSON_PRETTY_PRINT);
 			die;
-}
+		}
 	}
-
 }

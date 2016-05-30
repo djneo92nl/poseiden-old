@@ -11,7 +11,7 @@ use Symfony\Component\Yaml\Exception\ParseException;
  * Class main
  * @package djneo\poseiden
  */
-class ConfigurationParser {
+class configurationParser {
 
 	public function create() {
 		//Get files
@@ -29,11 +29,11 @@ class ConfigurationParser {
 
 		}
 
-		file_put_contents(CACHEPATH.'Configuration'.DIRECTORY_SEPARATOR.'Parsed.php', '<?php $configuration = '.var_export($ArrayToWrite, true).';');
+		file_put_contents(CACHEPATH.'Configuration'.DIRECTORY_SEPARATOR.'Parsed.php', '<?php return '.var_export($ArrayToWrite, true).';');
 	}
 
 	public function read() {
-		include CACHEPATH.'Configuration'.DIRECTORY_SEPARATOR.'Parsed.php';
+		return include CACHEPATH.'Configuration'.DIRECTORY_SEPARATOR.'Parsed.php';
 	}
 
 	/**
