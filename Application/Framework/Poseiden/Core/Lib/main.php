@@ -50,25 +50,20 @@ class main {
 			if (method_exists($usedController, $calledAction)) {
 				call_user_func_array(array($usedController, $calledAction), array(''));
 			} else {
-				header('Content-Type: application/json');
-				header('HTTP/1.0 404 Not Found');
-				header('X-Poseiden: 0.0.1');
-				echo json_encode(['state' => 'error',
-					'error' => '404',
-					'message' => 'Page not found'
-				], JSON_PRETTY_PRINT);
-				die;
+				$this->returnError('404');
 			}
-
 		} else {
-			header('Content-Type: application/json');
-			header('Content-Type: application/json');
-			header('X-Poseiden: 0.0.1');
-			echo json_encode(['state' => 'error',
-				'error' => '404',
-				'message' => 'Page not found'
-			], JSON_PRETTY_PRINT);
-			die;
+			$this->returnError('404');
 		}
+	}
+
+	public function returnError ($code) {
+		header('Content-Type: application/json');
+		header('Content-Type: application/json');
+		header('X-Poseiden: 0.0.1');
+		echo json_encode(['state' => 'error',
+			'error' => $code,
+			'message' => 'Page not found'
+		], JSON_PRETTY_PRINT);
 	}
 }

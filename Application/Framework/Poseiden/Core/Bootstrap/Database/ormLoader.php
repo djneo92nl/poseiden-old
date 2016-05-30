@@ -11,6 +11,9 @@ use Poseiden\Core\Service;
 class ormLoader{
 	public $settings;
 
+	/**
+	 * @return \PDO
+	 */
 	private function createConnection() {
 		try {
 			\ORM::configure('mysql:host=localhost;dbname=poseiden');
@@ -24,6 +27,9 @@ class ormLoader{
 		}
 	}
 
+	/**
+	 * @return \PDO
+	 */
 	public function __construct() {
 		$this->settings =lib\DILib::get('set');
 			return $this->createConnection();

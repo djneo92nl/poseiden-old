@@ -11,6 +11,7 @@ class loginController extends mainController {
 	public function listUsersAction() {
 		$usersData = $this->createFactory('users');
 		$users = $this->factory->find_many();
+		$outputBuffer = [];
 		foreach ($users as $user){
 			$userDate = $usersData->where('id', $user->id )->find_one();
 			$outputBuffer[$user->username ] = ['email' => $user->email, 'id' => $user->id ,
