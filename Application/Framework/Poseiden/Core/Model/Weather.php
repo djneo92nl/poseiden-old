@@ -4,7 +4,7 @@ namespace Poseiden\Core\Model;
 use Cmfcmf\OpenWeatherMap;
 use Poseiden\Core\lib;
 
-class weatherModel {
+class Weather {
 
 	// Language of data (try your own language here!):
 	public $lang = 'nl';

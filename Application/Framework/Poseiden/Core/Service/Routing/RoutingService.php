@@ -19,6 +19,7 @@ class RoutingService {
 		$this->requestheaders = $this->routerClass->getRequestHeaders();
 		switch ($this->requestmethod) {
 			case "POST":
+
 				break;
 			case "GET":
 				$this->routerClass->get('/(.*)', function($url) {
@@ -63,7 +64,9 @@ class RoutingService {
 			$this->route['requestedAction'] = 'indexAction';
 		}
 		else {
-			$this->route['requestedAction'] = strtolower($parsedUrl[1]).'Action';
+			if (!is_numeric($parsedUrl[1])){
+				$this->route['requestedAction'] = strtolower($parsedUrl[1]).'Action';
+			}
 		}
 
 	}

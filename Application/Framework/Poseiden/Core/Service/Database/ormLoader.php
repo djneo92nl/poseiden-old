@@ -1,5 +1,5 @@
 <?php
-namespace Poseiden\Core\Bootstrap\Database;
+namespace Poseiden\Core\Service\Database;
 
 use Poseiden\Core\lib;
 use Poseiden\Core\Service;
@@ -8,7 +8,7 @@ use Poseiden\Core\Service;
  * Class main
  * @package djneo\poseiden
  */
-class ormLoader{
+class OrmLoader{
 	public $settings;
 
 	/**

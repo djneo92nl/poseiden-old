@@ -2,5 +2,5 @@ Poseiden:
   Database:
     Host: 'Localhost'
     Username: 'root'
-    password: 'root'
-    database: 'poseiden'
+    Password: 'root'
+    Database: 'poseiden'
